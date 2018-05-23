@@ -1,0 +1,55 @@
+name: Binary XOR
+init: convert
+accept: done
+
+// Input two binary numbers seperated by a #
+
+convert,0,_,_
+convert,0,_,_,>,-,-
+
+convert,1,_,_
+convert,1,_,_,>,-,-
+
+convert,#,_,_
+drop,_,_,_,>,-,-
+
+drop,0,_,_
+drop,_,0,_,>,>,-
+
+drop,1,_,_
+drop,_,1,_,>,>,-
+
+drop,_,_,_
+align,_,_,_,<,-,-
+
+align,_,_,_
+align,_,_,_,<,-,-
+
+align,0,_,_
+xor,0,_,_,-,<,-
+
+align,1,_,_
+xor,1,_,_,-,<,-
+
+xor,0,0,_
+xor,0,0,0,<,<,<
+xor,1,1,_
+xor,1,1,0,<,<,<
+
+xor,_,0,_
+xor,_,0,0,<,<,<
+xor,0,_,_
+xor,0,_,0,<,<,<
+
+xor,1,0,_
+xor,1,0,1,<,<,<
+xor,1,_,_
+xor,1,_,1,<,<,<
+
+xor,0,1,_
+xor,0,1,1,<,<,<
+xor,_,1,_
+xor,_,1,1,<,<,<
+
+xor,_,_,_
+done,_,_,_,-,-,-
